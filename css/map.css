@@ -1,0 +1,211 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    transition: background-color 0.8s;
+}
+
+
+.map{
+    padding-left: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+path{
+   
+    transform: scale(1);
+    transition: all 0.9s;
+}
+
+.hidden{
+    display: none;
+ }
+
+/* path hover class */
+.color{
+    fill-opacity: 1;
+}
+
+svg{
+ 
+    overflow: scroll;
+}
+
+
+
+.popup{
+    position: absolute;   
+    z-index: 2;
+    display: block;
+    visibility: hidden;
+    border: 1px solid Black;
+    padding: 10px;
+    font-family: Verdana, Arial;
+    font-size: 1.5em;
+    background-color: #FFF;
+    opacity: 0.7;
+    border-radius: 20px;
+}
+
+/*************************************search bar**********************************/
+
+.search_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    border-radius: 100px;
+}
+p{
+    color: #838a90;
+}
+
+b{
+    color: white;
+}
+
+.switcher{
+    display: flex;
+    position: absolute;
+    top: 170px;
+    left: 10px;
+    align-items: center;
+}
+
+input.switch{
+    cursor: pointer;
+    width: auto;
+}
+
+input.search{
+    font-size: medium;
+    border: none;
+    border-radius: 80px;
+    padding: 10px;
+    width: 70%;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+table{
+    color: #ddd;
+}
+
+/*************************************darmode-btn*********************************/
+/*div containing the button*/
+.darkmode-btn{
+    border: 1px solid #444;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: -95%;   
+}
+
+/*label with class switch display*/
+.switch{
+    position: relative;
+    display: inline-block;
+    height: 48px;
+    width: 80px;
+}
+
+/*hidding the default input checkbox*/
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/*span with class slider which will contains the button and the all logic of the button*/
+.slider{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 30px;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    border-radius: 50%;
+    background-color: #999;
+    transition: 0.4s;
+}
+
+/* if the checkbox element is checked the element that follows the input get colored black*/
+input:checked + .slider{
+    background-color: black;
+}
+
+input:checked + .slider::before{
+    transform: translateX(43px);
+}
+/* *******************************Switcher input**************************************/
+
+/**********************************Legend Benin map ****************************/
+.legend_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #eee;
+    padding: 10px;
+    position: fixed;
+    top: 0; 
+    right:0;
+} 
+
+.img_left{
+    position: fixed;
+    top: -9%;
+    left: 0;
+}
+
+/* RESPONSIVE DESIGN */
+/* (breakpoint: http://devfacts.com/media-queries-breakpoints-2020/) */
+/* medium device */
+@media (max-width: 900px){
+    .legend_img{
+        width: 42%;
+        height: 42%;  
+        color: in;
+    } 
+    
+}
+
+
+/******************************DARK-MODE LOGIC CLASS*********************************/
+.dark{
+    background-color: #444;
+}
+
+.darkmap{
+    fill: #333;
+}
+
+.darkmap:hover{
+    fill: #b8860b;
+}
+
+
+
